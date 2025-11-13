@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCORSS - Personal Information Form</title>
+    <link rel="stylesheet" href="font.css" />
+    <link rel="stylesheet" href="personal-info.css" />
+</head>
+<!-- Header Section -->
+<header class="top-bar">
+    <div class="logo">
+        <div class="logo-icon">
+            <a href="home.html">
+                <img src="image/logo.png" alt="SCORSS logo" class="logo">
+            </a>
+        </div>
+        <span class="logo-name">SCORSS</span>
+    </div>
+    <div class="Language">
+        <img src="icon/language.png" alt="Language Icon" id="language-icon">
+        <select name="language" id="language" class="language-dropdown">
+            <option value="en">English</option>
+            <option value="fil">Filipino</option>
+        </select>
+    </div>
+</header>
+
+<!-- Main Content Section -->
+
+<div class="container">
+    <!-- First block: Personal Information Text -->
+    <div class="personal-info-text">
+        <h1>Personal Information</h1>
+    </div>
+
+    <!-- Second block: Progress bar or Steps -->
+    <div class="progress-bar">
+        <div class="step-group">
+            <div class="step">
+                <img src="icon/user.png" alt="Personal Icon" class="step-icon active" aria-hidden="true" />
+            </div>
+            <div class="step-separator"></div>
+            <div class="step">
+                <img src="icon/id.png" alt="Verification Icon" class="step-icon" aria-hidden="true" />
+            </div>
+            <div class="step-separator"></div>
+            <div class="step">
+                <img src="icon/docs.png" alt="Documents Icon" class="step-icon" aria-hidden="true" />
+            </div>
+            <div class="step-separator"></div>
+            <div class="step">
+                <img src="icon/check.png" alt="Complete Icon" class="step-icon" aria-hidden="true" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Third block: Form -->
+    <!-- Row 1 -->
+    <h1 class="hero-title">
+        <span class="hero-title-highlight">Fill Out Information</span>
+    </h1>
+    <div class="form-row">
+        <div class="form-group">
+            <label for="fullname">Full Name of Senior Citizen <span class="required">*</span></label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter Full Name" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Birthdate <span class="required">*</span></label>
+            <input type="number" id="age" name="age" placeholder="Enter Birthdate" required>
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="form-row">
+        <div class="form-group">
+            <label for="contact">Contact Number <span class="required">*</span></label>
+            <input type="tel" id="contact" name="contact" placeholder="(09XX) XXX - XXXX" required>
+        </div>
+        <div class="form-group">
+            <label>Gender <span class="required">*</span></label>
+            <input type="text" id="geder" name="gender" placeholder="Enter Gender" required>
+        </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="form-row">
+        <div class="form-group">
+            <label for="address">Complete Address <span class="required">*</span></label>
+            <input type="text" id="address" name="address" placeholder="House number, street, barangay, city/municipality, province" required>
+        </div>
+    </div>
+
+    <!-- Guardian Section -->
+    <div class="guardian-section">
+        <h3>Guardian Information <span class="guardian-note">(If Applicable)</span></h3>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="gname">Guardian Name</label>
+                <input type="text" id="gname" name="gname" placeholder="Name of person assisting">
+            </div>
+            <div class="form-group">
+                <label for="gcontact">Guardian Contact</label>
+                <input type="tel" id="gcontact" name="gcontact" placeholder="Guardian’s phone number">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-footer">
+        Continue to verification &#8594;
+        <a href="documents.html">Go to Documents</a>
+<a href="success.html">Go to Success</a>
+<a href="home.html">Home</a>

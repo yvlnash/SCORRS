@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCORSS - Personal Information Form</title>
+  <link rel="stylesheet" href="font.css" />
+  <link rel="stylesheet" href="verification.css" />
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="top-bar main-header">
+    <div class="logo">
+      <div class="logo-icon">
+      <a href="home.html">
+        <img src="image/logo.png" alt="SCORSS logo" class="logo">
+      </a>
+      </div>
+      <span class="logo-name">SCORSS</span>
+    </div>
+      <div class="Language">
+        <img src="icon/language.png" alt="Language Icon" id="language-icon">
+        <select name="language" id="language" class="language-dropdown">
+          <option value="en">English</option>
+          <option value="fil">Filipino</option>
+        </select>
+      </div>
+  </header>
+  <main class="hero">
+    <div class="container">
+      <div class="id-verification-text">
+        <h1>Verify Your Identity</h1>
+      </div>
+      <div class="progress-bar">
+        <div class="step-group">
+          <div class="step">
+            <img src="icon/user.png" alt="Personal Icon" class="step-icon active" aria-hidden="true" />
+          </div>
+          <div class="step-separator"></div>
+          <div class="step">
+            <img src="icon/id.png" alt="Verification Icon" class="step-icon active" aria-hidden="true" />
+          </div>
+          <div class="step-separator"></div>
+          <div class="step">
+            <img src="icon/docs.png" alt="Documents Icon" class="step-icon" aria-hidden="true" />
+          </div>
+          <div class="step-separator"></div>
+          <div class="step">
+            <img src="icon/check.png" alt="Complete Icon" class="step-icon" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+      <section class="hero-content">
+        <div class="verification-card__inner">
+          <header class="verification-card__header">
+            <h2 id="verification-title">Take Photo of Your ID</h2>
+          </header>
+          <form class="verification-form" novalidate>
+            <div class="field-group">
+              <label class="field-label" for="id-type">Type of ID</label>
+              <div class="select-wrap">
+                <select id="id-type" name="id-type" required>
+                  <option value="" disabled selected>Select your ID</option>
+                  <option value="philid">PhilID (PhilSys ID)</option>
+                  <option value="drivers">Driver's License</option>
+                  <option value="passport">Passport</option>
+                  <option value="sss">SSS ID</option>
+                  <option value="postal">Postal ID</option>
+                </select>
+              </div>
+            </div>
+            <div class="capture-grid">
+              <article class="capture-card">
+                <header class="capture-card__header">
+                  <h3>Front</h3>
+                  <p>Align the front side within the guidelines.</p>
+                </header>
+                <label class="capture-frame" for="front-id">
+                  <span class="capture-outline" aria-hidden="true"></span>
+                  <span class="capture-placeholder" aria-hidden="true">
+                    <span class="capture-photo"></span>
+                  </span>
+                  <span class="capture-camera" aria-hidden="true">
+                    <img src="icon/camera.png" alt="Camera Icon" width="22" height="22" />
+                  </span>
+                  <span class="capture-cta">Tap to capture or upload</span>
+                </label>
+                <input class="capture-input" type="file" id="front-id" name="front-id" accept="image/*" capture="environment" required />
+                <p class="capture-status" data-status-for="front-id">No file chosen</p>
+              </article>
+              <article class="capture-card">
+                <header class="capture-card__header">
+                  <h3>Back</h3>
+                  <p>Include the barcode or QR code clearly.</p>
+                </header>
+                <label class="capture-frame" for="back-id">
+                  <span class="capture-outline" aria-hidden="true"></span>
+                  <span class="capture-placeholder" aria-hidden="true">
+                    <span class="capture-photo"></span>
+                  </span>
+                  <span class="capture-camera" aria-hidden="true">
+                    <img src="icon/camera.png" alt="Camera Icon" width="22" height="22" />
+                  </span>
+                  <span class="capture-cta">Tap to capture or upload</span>
+                </label>
+                <input class="capture-input" type="file" id="back-id" name="back-id" accept="image/*" capture="environment" required />
+                <p class="capture-status" data-status-for="back-id">No file chosen</p>
+              </article>
+            </div>
+            <div class="form-actions">
+              <button class="ghost-button" type="button">&#8592; Back to Personal Info</button>
+              <button class="primary-button" type="submit">Continue to documents &#8594;</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>
+  </footer>
+  <script>
+    const captureInputs = document.querySelectorAll('.capture-input');
+    captureInputs.forEach((input) => {
+      const status = document.querySelector(`[data-status-for="${input.id}"]`);
+      input.addEventListener('change', () => {
+        if (input.files && input.files.length > 0) {
+          const names = Array.from(input.files)
+            .map((file) => file.name)
+            .join(', ');
+          status.textContent = names;
+          status.classList.add('has-value');
+        } else {
+          status.textContent = 'No file chosen';
+          status.classList.remove('has-value');
+        }
+      });
+    });
+
+    document.querySelector('.ghost-button').addEventListener('click', function() {
+      window.location.href = 'personal-info.html';
+    });
+    document.querySelector('.primary-button').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'documents.html';
+    });
+  </script>
+</body>
+</html>
+<a href="documents.html">Go to Documents</a>
+<a href="success.html">Go to Success</a>
+<a href="home.html">Home</a>

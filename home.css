@@ -1,0 +1,229 @@
+Try AI directly in your favorite apps … Use Gemini to generate drafts and refine content, plus get Gemini Pro with access to Google's next-gen AI for ₱1,100 ₱0 for 1 month
+:root {
+  --primary-green: #2fce6a;
+  --primary-green-dark: #17a84f;
+  --primary-green-light: #e6f8ed;
+  --text-dark: #0f1f15;
+  --text-muted: #3f4d43;
+  --card-gradient: linear-gradient(135deg, #a8f59f 0%, #69d572 100%);
+  --card-gradient-secondary: linear-gradient(135deg, #a9f0ff 0%, #64d0ee 100%);
+  --shadow-soft: 0 20px 40px rgba(28, 112, 60, 0.18);
+  --border-radius-lg: 24px;
+}
+/*** Reset and Base Styles ***/
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-dark);
+  min-height: 100vh;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url("image/first_pagebg.png") no-repeat center center/cover;
+  opacity: 0.45;
+  z-index: -1;
+}
+
+/*** Top Bar ***/
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 4vw;
+  background: linear-gradient(90deg, #d5f5d8, #b7f5b6);
+  border-bottom: 4px solid var(--primary-green);
+}
+
+/*** Logo ***/
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--primary-green-dark);
+  letter-spacing: 0.96px;
+}
+.logo-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #5ed169;
+  display: grid;
+  place-items: center;
+  border: 3px solid #f5fffa;
+  box-shadow: 0 10px 20px rgba(46, 142, 85, 0.3);
+}
+.logo-name {
+  text-transform: uppercase;
+}
+.logo-icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/*** Language Selector ***/
+.Language{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+.language-dropdown {
+  border: none;
+  background: transparent;
+  font: inherit;
+  padding: 0 8px;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--primary-green-dark);
+}
+#language-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
+  object-fit: contain;
+}
+.language-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10.4px 24px;
+  border-radius: 999px;
+  border: 2px solid var(--primary-green-dark);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary-green-dark);
+  font-weight: 600;
+  letter-spacing: .48px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.language-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(23, 168, 79, 0.2);
+}
+/*** main text ***/
+.hero {
+  padding: 64px 4vw 64px;
+  display: flex;
+  justify-content: center;
+}
+.hero-content {
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 36px;
+  padding: 56px clamp(32px, 6vw, 80px);
+  box-shadow: 0 30px 60px rgba(37, 113, 66, 0.18);
+  border: 4px solid rgba(47, 206, 106, 0.2);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.95)),
+  var(--card-gradient);
+}
+.hero-title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.hero-title-highlight {
+  display: inline-block;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary-green-dark);
+  border-radius: 20px;
+  padding: 8px 22px;
+  margin-bottom: 0px;
+}
+.hero-title-sub {
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 500;
+  color: var(--primary-green-dark);
+}
+.hero-description {
+  margin: 28px auto 48px;
+  max-width: 600px;
+  font-size: 16.8px;
+  color: var(--text-muted);
+}
+
+/*** Call to Action Grid ***/
+.cta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.cta-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.95)),
+    var(--card-gradient);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem 2rem 2rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  text-align: center;
+}
+#submit-icon, #view-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10%;
+}
+.cta-card-title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary-green-dark);
+}
+.cta-card-text {
+  margin: 0;
+  font-size: 0.98rem;
+  color: var(--text-muted);
+}
+.cta-card-button {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2.2rem;
+  border-radius: 999px;
+  background: var(--primary-green-dark);
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  box-shadow: 0 12px 24px rgba(23, 168, 79, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cta-card-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 30px rgba(23, 168, 79, 0.4);
+}
+
+/*** Footer ***/
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #d5f5d8, #b7f5b6);
+  border-top: 4px solid var(--primary-green);
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 18px 0;
+}

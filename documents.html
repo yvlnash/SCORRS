@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCORSS - Personal Information Form</title>
+  <link rel="stylesheet" href="font.css" />
+  <link rel="stylesheet" href="docs.css" />
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="top-bar main-header">
+    <div class="logo">
+      <div class="logo-icon">
+      <a href="home.html">
+        <img src="image/logo.png" alt="SCORSS logo" class="logo">
+      </a>
+      </div>
+      <span class="logo-name">SCORSS</span>
+    </div>
+      <div class="Language">
+        <img src="icon/language.png" alt="Language Icon" id="language-icon">
+        <select name="language" id="language" class="language-dropdown">
+          <option value="en">English</option>
+          <option value="fil">Filipino</option>
+        </select>
+      </div>
+  </header>
+  <div class="container">
+      <div class="document-text">
+          <h1>Submit Documents</h1>
+      </div>
+      <div class="progress-bar">
+          <div class="step-group">
+              <div class="step">
+                  <img src="icon/user.png" alt="Personal Icon" class="step-icon active" aria-hidden="true" />
+              </div>
+              <div class="step-separator"></div>
+              <div class="step">
+                  <img src="icon/id.png" alt="Verification Icon" class="step-icon active" aria-hidden="true" />
+              </div>
+              <div class="step-separator"></div>
+              <div class="step">
+                  <img src="icon/docs.png" alt="Documents Icon" class="step-icon active" aria-hidden="true" />
+              </div>
+              <div class="step-separator"></div>
+              <div class="step">
+                  <img src="icon/check.png" alt="Complete Icon" class="step-icon" aria-hidden="true" />
+              </div>
+          </div>
+      </div>
+      <section class="hero-content">
+          <header class="document-card__header">
+              <h2 id="document-title">Upload Your Documents</h2>
+          </header>
+
+          <form class="documents-form" novalidate>
+              <div class="upload-row">
+                  <div class="upload-info">
+                      <h3>Senior Citizen ID</h3>
+                      <span class="badge badge--required">Required</span>
+                  </div>
+                  <div class="upload-actions">
+                      <p class="file-name" data-file-for="senior-id">No file chosen</p>
+                      <label class="upload-button">
+                          <span>Choose File</span>
+                          <input type="file" id="senior-id" name="senior-id" accept="image/*,.pdf" required />
+                      </label>
+                  </div>
+              </div>
+
+              <div class="upload-row">
+                  <div class="upload-info">
+                      <h3>Government Issued ID</h3>
+                      <span class="badge badge--required">Required</span>
+                  </div>
+                  <div class="upload-actions">
+                      <p class="file-name" data-file-for="gov-id">No file chosen</p>
+                      <label class="upload-button">
+                          <span>Choose File</span>
+                          <input type="file" id="gov-id" name="gov-id" accept="image/*,.pdf" required />
+                      </label>
+                  </div>
+              </div>
+
+              <div class="upload-row">
+                  <div class="upload-info">
+                      <h3>Barangay Certificate</h3>
+                      <span class="badge badge--required">Required</span>
+                  </div>
+                  <div class="upload-actions">
+                      <p class="file-name" data-file-for="barangay">No file chosen</p>
+                      <label class="upload-button">
+                          <span>Choose File</span>
+                          <input type="file" id="barangay" name="barangay" accept="image/*,.pdf" required />
+                      </label>
+                  </div>
+              </div>
+
+              <div class="upload-row">
+                  <div class="upload-info">
+                      <h3>Birth Certificate</h3>
+                      <span class="badge badge--required">Required</span>
+                  </div>
+                  <div class="upload-actions">
+                      <p class="file-name" data-file-for="birth">No file chosen</p>
+                      <label class="upload-button">
+                          <span>Choose File</span>
+                          <input type="file" id="birth" name="birth" accept="image/*,.pdf" required />
+                      </label>
+                  </div>
+              </div>
+
+              <div class="upload-row">
+                  <div class="upload-info">
+                      <h3>Medical Certificate</h3>
+                      <span class="badge badge--optional">Optional</span>
+                  </div>
+                  <div class="upload-actions">
+                      <p class="file-name" data-file-for="medical">No file chosen</p>
+                      <label class="upload-button">
+                          <span>Choose File</span>
+                          <input type="file" id="medical" name="medical" accept="image/*,.pdf" />
+                      </label>
+                  </div>
+              </div>
+
+              <aside class="upload-notes" aria-label="Important notes">
+                  <h4>Important Notes:</h4>
+                  <ul>
+                      <li>Ensure documents are clear and readable.</li>
+                      <li>File size must not exceed 10MB per document.</li>
+                      <li>Documents marked as “Required” must be uploaded.</li>
+                      <li>You can upload multiple files for each document type.</li>
+                  </ul>
+              </aside>
+
+              <div class="form-actions">
+                  <a href="identity-verification.html" class="ghost-button" style="text-decoration:none; text-align:center;">&#8592; Back to Verification</a>
+                  <a href="success.html" class="primary-button" style="text-decoration:none; text-align:center;">Submit Documents</a>
+              </div>
+          </form>
+      </section>
+  </div>
+    <footer></footer>
+    <script>
+      const fileInputs = document.querySelectorAll('.upload-button input[type="file"]');
+
+      fileInputs.forEach((input) => {
+        const label = input.closest('.upload-actions').querySelector(
+          `[data-file-for="${input.id}"]`
+        );
+
+        input.addEventListener('change', () => {
+          if (input.files && input.files.length > 0) {
+            const names = Array.from(input.files)
+              .map((file) => file.name)
+              .join(', ');
+            label.textContent = names;
+            label.classList.add('has-value');
+          } else {
+            label.textContent = 'No file chosen';
+            label.classList.remove('has-value');
+          }
+        });
+      });
+    </script>
+    </div>
+  </main>
+</body>
+<a href="documents.html">Go to Documents</a>
+<a href="success.html">Go to Success</a>
+<a href="home.html">Home</a>

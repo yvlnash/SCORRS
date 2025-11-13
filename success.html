@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCORSS - Personal Information Form</title>
+    <link rel="stylesheet" href="font.css" />
+    <link rel="stylesheet" href="success.css" />
+</head>
+<!-- Header Section -->
+<div class="vonfirmation-shell">
+    <header class="top-bar main-header">
+        <div class="logo">
+            <div class="logo-icon">
+                <a href="home.html">
+                    <img src="image/logo.png" alt="SCORSS logo" class="logo">
+                </a>
+            </div>
+            <span class="logo-name">SCORSS</span>
+        </div>
+        <div class="Language">
+            <img src="icon/language.png" alt="Language Icon" id="language-icon">
+            <select name="language" id="language" class="language-dropdown">
+                <option value="en">English</option>
+                <option value="fil">Filipino</option>
+            </select>
+        </div>
+    </header>
+    <div class="container">
+        <div class="submit-text">
+            <h1>Submission Review</h1>
+        </div>
+        <div class="progress-bar">
+            <div class="step-group">
+                <div class="step">
+                    <img src="icon/user.png" alt="Personal Icon" class="step-icon active" aria-hidden="true" />
+                </div>
+                <div class="step-separator"></div>
+                <div class="step">
+                    <img src="icon/id.png" alt="Verification Icon" class="step-icon active" aria-hidden="true" />
+                </div>
+                <div class="step-separator"></div>
+                <div class="step">
+                    <img src="icon/docs.png" alt="Documents Icon" class="step-icon active" aria-hidden="true" />
+                </div>
+                <div class="step-separator"></div>
+                <div class="step">
+                    <img src="icon/check.png" alt="Complete Icon" class="step-icon active" aria-hidden="true" />
+                </div>
+            </div>
+        </div>
+        <section class="hero-content">
+            <div class="success-card__body">
+                <div class="success-status" role="status" aria-live="polite">
+              <span class="success-status__icon" aria-hidden="true">
+                <img src="icon/checked.png" alt="Success Icon" class="success-status__icon-img"
+                     style="width: 50px; display: block;" />
+              </span>
+                    <div class="success-status__copy">
+                        <h2>Submission Successful!</h2>
+                        <p>
+                            Your documents have been submitted successfully. You will receive SMS updates on your
+                            application status.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="submission-meta" role="group" aria-labelledby="submission-id-label">
+                    <p id="submission-id-label" class="submission-meta__label">Submission ID</p>
+                    <p class="submission-meta__value" aria-live="polite" data-submission-id>SR01-00000000</p>
+                    <p class="submission-meta__hint">
+                        Important: Please save your Submission ID for future reference and inquiries.
+                    </p>
+                </div>
+            </div>
+
+            <div class="success-card__footer">
+                <button class="cta-button" type="button" data-action="view-submission">
+                    VIEW MY SUBMISSION
+                </button>
+            </div>
+        </section>
+        <footer>
+        </footer>
+        <a href="documents.html">Go to Documents</a>
+<a href="success.html">Go to Success</a>
+<a href="home.html">Home</a>
